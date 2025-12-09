@@ -1,3 +1,4 @@
+//scope-hoistig-closure
 var globalVar = "I'm global";
 
 function outerFunction() {
@@ -31,3 +32,25 @@ var resultFunc = outerFunction();
 
 var closure1 = resultFunc();
 closure1(); 
+
+
+//array methods
+const items = [
+    {name:'Tv', price:1000},
+    {name:'Book', price:200},
+    {name:'Computer', price:2000},
+    {name:'Keyboard', price:300},
+    {name:'Phone', price:200},
+    {name:'Car', price:3000},
+]
+
+const filteredItems = items.filter((item) => item.price <= 500)
+console.log(filteredItems)
+
+const mapedItems = items.map((item) => item.name)
+console.log(mapedItems)
+
+const reducedItems = items.reduce((totalPrice, item) => {
+    return item.price + totalPrice
+}, 0)
+console.log(reducedItems)
