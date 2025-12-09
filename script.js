@@ -54,3 +54,28 @@ const reducedItems = items.reduce((totalPrice, item) => {
     return item.price + totalPrice
 }, 0)
 console.log(reducedItems)
+
+//destructuring & spread
+const [a, ,c, ...rest] = items
+console.log("first element:",a.name)
+console.log("third element:",c.name)
+console.log("other elements", rest)
+
+const myInfo = {
+    name: 'Hoda',
+    age: 21,
+    address: {
+        city: 'Somewhere',
+        street: 'unknown'
+    }
+}
+
+const {name:firstName , age, job = 'student', address: {city} } = myInfo
+console.log("my information:",firstName, age, job)
+console.log("my city is",city)
+
+function printUser({name}){
+    console.log("my name is",name)
+}
+
+printUser(myInfo)
